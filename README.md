@@ -19,3 +19,5 @@ This was my very first official Python project! While building it, I mastered:
 * Data persistence using File I/O and JSON dictionaries.
 
 A disclaimer - Replit hadled all visuals, HTML, etc - Replit also helped to add some features like a high score, difficulty levels, and JSON saves. My original script was purely a text based game. 
+
+[![Play Game](https://img.shields.shields.shields.shields.shields.shields.io/badge/PLAY-NOW-green?style=for-the-badge)]((https://midnight-farmer--switchncode.replit.app/))
