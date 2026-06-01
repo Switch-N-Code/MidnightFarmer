@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Farmer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="header">
+      <div class="stars">⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆</div>
+      <h1>ᗰIᗪᑎIGᕼT ᖴᗩᖇᗰEᖇ</h1>
+      <div class="stars">⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆ ───── ⋆⋅☆⋅⋆</div>
+    </div>
+
+    <div id="intro-screen" class="screen active">
+      <div class="intro-text">
+        <p>It's the dead of night.</p>
+        <p>You have snuck onto a rival farmer's land.</p>
+        <p>As the malicious gremlin you are, you decide to plant some invasive flowers!</p>
+        <p>The only problem?</p>
+        <p class="highlight">YOU CAN'T SEE!</p>
+        <p>The field is a 5 × 5 grid. Some spots already have crops.</p>
+        <p>Guess the coordinates to secretly plant your sabotaging flowers.</p>
+      </div>
+
+      <div id="difficulty-section">
+        <p class="difficulty-label">Choose your darkness:</p>
+        <div id="difficulty-buttons">
+          <button class="diff-btn active" data-diff="easy">
+            <span class="diff-moon">🌕</span>
+            <span class="diff-name">Easy</span>
+            <span class="diff-desc">8 crops · 17 turns · 3 strikes</span>
+            <span class="diff-hs" id="hs-easy">Best: —</span>
+          </button>
+          <button class="diff-btn active-selected" data-diff="normal">
+            <span class="diff-moon">🌙</span>
+            <span class="diff-name">Normal</span>
+            <span class="diff-desc">12 crops · 13 turns · 3 strikes</span>
+            <span class="diff-hs" id="hs-normal">Best: —</span>
+          </button>
+          <button class="diff-btn" data-diff="hard">
+            <span class="diff-moon">🌑</span>
+            <span class="diff-name">Hard</span>
+            <span class="diff-desc">16 crops · 9 turns · 2 strikes</span>
+            <span class="diff-hs" id="hs-hard">Best: —</span>
+          </button>
+        </div>
+      </div>
+
+      <button id="start-btn" class="btn">Sneak Onto the Farm 🌙</button>
+    </div>
+
+    <div id="game-screen" class="screen">
+      <div id="difficulty-badge"></div>
+      <div id="stats">
+        <div class="stat">
+          <span class="stat-label">Attempts Left</span>
+          <span id="turns-display" class="stat-value">13/13</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Strikes</span>
+          <span id="strikes-display" class="stat-value strike-value">0/3</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Flowers Planted</span>
+          <span id="planted-display" class="stat-value">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Best Score</span>
+          <span id="highscore-display" class="stat-value highscore-value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">🔥 Streak</span>
+          <span id="streak-display" class="stat-value streak-value">0</span>
+        </div>
+      </div>
+
+      <div id="message-box">
+        <p id="message">Click a dark patch to plant your invasive flower...</p>
+      </div>
+
+      <div id="grid-container">
+        <div id="grid"></div>
+        <div id="col-labels">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        </div>
+        <div id="row-labels">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        </div>
+      </div>
+
+      <div id="legend">
+        <span class="legend-item"><span class="legend-icon unknown">?</span> Unknown</span>
+        <span class="legend-item"><span class="legend-icon planted">🌸</span> Planted</span>
+        <span class="legend-item"><span class="legend-icon crop">🌽</span> Crop! (Strike)</span>
+      </div>
+    </div>
+
+    <div id="end-screen" class="screen">
+      <div id="end-content">
+        <h2 id="end-title"></h2>
+        <p id="end-message"></p>
+        <div id="final-grid"></div>
+        <p id="score-text"></p>
+        <p id="new-record-text"></p>
+        <p id="highscore-text"></p>
+        <p id="streak-result-text"></p>
+        <p id="best-streak-text"></p>
+        <div id="share-row">
+          <button id="copy-btn" class="btn btn-share">Copy Result 📋</button>
+          <button id="restart-btn" class="btn">Sneak Back In 🌙</button>
+        </div>
+        <p id="copy-confirm"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="sounds.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
